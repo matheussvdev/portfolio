@@ -5,6 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import emailjs from 'emailjs-com';
+import novaopcao from '../../assets/images/novaopcao.png';
 
 
 function Home() {
@@ -56,14 +57,23 @@ function Home() {
         </div>
       </div>
     );
+
   }
+
+      // Função para scroll suave
+  const scrollPara = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="home-container">
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <ul className="nav">
-          <li className="left-item"><a  href="#">&lt;Matheus/&gt;</a></li>
+          <li className="left-item"><a href="#">&lt;Matheus/&gt;</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -91,8 +101,8 @@ function Home() {
         </p>
 
         <div className="button-container">
-          <button className="btn-primary">Ver Projetos</button>
-          <button className="btn-secondary">Entre em Contato</button>
+          <button className="btn-primary" onClick={() => scrollPara('projetos')}>Ver Projetos</button>
+          <button className="btn-secondary" onClick={() => scrollPara('contato')}>Entre em Contato</button>
         </div>
 
         <div className="social-buttons">
@@ -118,14 +128,16 @@ function Home() {
         <div className="conteudo">
           <div className="descricao">
             <p>
-              Sou Matheus, 19 anos, moro em Barueri-SP. Sou formado em Técnico em Informática e atualmente estou graduando em Análise e Desenvolvimento de Sistemas pela Universidade Cruzeiro do Sul virtual...
+              Sou Matheus, 19 anos, moro em Barueri-SP. Sou formado em Técnico em Informática e atualmente estou graduando em Análise e Desenvolvimento de Sistemas pela Universidade Cruzeiro do Sul virtual. Atuo como Auxiliar Técnico de TI na Selbetti, com experiência em suporte, reparos de hardware (notebooks e CPUs), atendimento a chamados de garantia e instalação de imagens em ambientes corporativos.
+              <br /> <br />
+              Meu interesse por desenvolvimento de software começou antes mesmo da formação técnica. De forma autodidata, dei os primeiros passos na programação, o que despertou meu interesse pela área e me motivou a ingressar no curso Técnico em Informática. Durante a formação, aprofundei meus conhecimentos e desenvolvi diversos projetos, tanto pessoais quanto acadêmicos, envolvendo front-end, back-end e banco de dados. Atualmente, sigo me especializando por meio da graduação em Análise e Desenvolvimento de Sistemas, buscando constantemente evoluir como profissional de tecnologia.
             </p>
           </div>
           <div className="habili">
-            <div className="card"><div className="icon">💻</div><h3>Clean Code</h3><p>Escrevendo código limpo, escalável e bem documentado.</p></div>
-            <div className="card"><div className="icon">🧠</div><h3>Problem Solving</h3><p>Transformando problemas complexos em soluções simples e elegantes.</p></div>
-            <div className="card"><div className="icon">🤝</div><h3>Team Player</h3><p>Trabalho colaborativo com comunicação eficiente.</p></div>
-            <div className="card"><div className="icon">⚡</div><h3>Performance</h3><p>Otimização de aplicações para velocidade e confiabilidade.</p></div>
+            <div className="card"><div className="icon">💻</div><h3>Full Stack Development</h3><p>Construindo soluções completas do front ao back-end.</p></div>
+            <div className="card"><div className="icon">🧠</div><h3>Solução de Problemas</h3><p>Transformando problemas complexos em soluções simples e elegantes.</p></div>
+            <div className="card"><div className="icon">🤝</div><h3>Adaptabilidade</h3><p>Rapidez em aprender e se ajustar a novos contextos.</p></div>
+            <div className="card"><div className="icon">⚡</div><h3>Performance</h3><p>Buscando excelência em cada linha de código, entregando sistemas rápidos, estáveis e escaláveis.</p></div>
           </div>
         </div>
       </div>
@@ -136,11 +148,11 @@ function Home() {
         <p className="subtitulo">// <span>Projetos pessoais e experimentais</span></p>
         <div className="cards2">
           <div className="card2">
-            <img src="https://img.freepik.com/fotos-gratis/engenheiro-de-computadores-a-digitar-no-teclado-a-escrever-codigo-para-construir-firewalls_482257-101117.jpg?semt=ais_hybrid&w=740&q=80" alt="Projeto 1" />
-            <h3>AI Code Assistant</h3>
-            <p>Ferramenta de revisão de código com IA para desenvolvedores.</p>
-            <div className="tags"><span>React</span><span>TypeScript</span><span>OpenAI API</span></div>
-            <button className="deploy">deploy()</button>
+            <img src={novaopcao} alt="Projeto 1" />
+            <h3>Nova opção</h3>
+            <p>Aplicativo desenvolvido para uso interno no comércio do meu pai. Permite registrar vendas, controlar o estoque, gerar relatórios e acompanhar devedores de forma prática e organizada.</p>
+            <div className="tags"><span>React Native</span><span>TypeScript</span><span>Firebase</span></div>
+            <button className="deploy">acessar()</button>
           </div>
         </div>
       </div>
@@ -195,7 +207,7 @@ function Home() {
       {/* Contato */}
       <div className='contato' id='contato'>
         <span className='p-contato'>&lt;<span className='p-span-contato'>Contato/</span>&gt;</span>
-        <p className='p-subtitle'>// Let's build something amazing together</p>
+
 
         <div className='contact-container'>
           <div className='send-message'>
@@ -266,18 +278,18 @@ function Home() {
           <div className="footer-social">
             <p>connect.with(me)</p>
             <div className="icons">
-              <a href="https://github.com/matheussvdev"  target="_blank"><Github size={20} /></a>
-              <a href="https://www.linkedin.com/in/matheus-santos-vieira-60457b309"  target="_blank"><Linkedin size={20} /></a>
-            <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=matheussv.dev@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="email-button"
-          >
-            <AiOutlineMail size={20} />
-          </a>
+              <a href="https://github.com/matheussvdev" target="_blank"><Github size={20} /></a>
+              <a href="https://www.linkedin.com/in/matheus-santos-vieira-60457b309" target="_blank"><Linkedin size={20} /></a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=matheussv.dev@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="email-button"
+              >
+                <AiOutlineMail size={20} />
+              </a>
             </div>
-            <p className="subtitle">// Always open to connect</p>
+            <p className="subtitle">// Me encontre nessas redes</p>
           </div>
         </div>
 

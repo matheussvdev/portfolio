@@ -381,7 +381,7 @@ html{
   margin-left: 15%;
   margin-right: 3%;
 
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 .descricao p {
@@ -708,6 +708,7 @@ html{
   
   font-size: 40px;
   margin-top: 4%;
+  margin-bottom: 4%;
  
 }
 
@@ -1028,4 +1029,162 @@ textarea {
 
 .footer-bottom .console-log .highlight {
   color: #facc15; /* amarelo */
+}
+
+/* ============================= */
+/* RESPONSIVIDADE COMPACTA */
+/* ---------- TABLETS (1024px) ---------- */
+@media (max-width: 1024px) {
+  .corpo {
+    padding: 60px 15px;
+  }
+
+  .h1-span, .h1-prin {
+    font-size: 2rem;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .habili {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .card, .cards2 .card2, .skills-card {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .send-message, .contact-info {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .p-sobre, .p-projetos, .p-contato {
+    font-size: 28px;
+  }
+
+  .corpo p {
+    font-size: 16px;
+  }
+}
+
+/* ---------- CELULARES (768px) ---------- */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .left-item {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+
+  .corpo {
+    margin-left: 0;
+    padding: 40px 10px;
+  }
+
+  .h1-span, .h1-prin {
+    font-size: 1.8rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .habili {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .cards2 .card2, .skills-card {
+    width: 90%;
+  }
+
+  .devtools {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .p-sobre, .p-projetos, .p-contato {
+    font-size: 24px;
+  }
+
+  .corpo p {
+    font-size: 14px;
+  }
+
+  .send-message, .contact-info {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ---------- CELULARES PEQUENOS (480px) ---------- */
+@media (max-width: 480px) {
+  .h1-span, .h1-prin {
+    font-size: 1.5rem;
+  }
+
+  .p-sobre, .p-projetos, .p-contato {
+    font-size: 20px;
+  }
+
+  .corpo p {
+    font-size: 13px;
+  }
+
+  .button-container {
+    gap: 5px;
+  }
+
+  .habili {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cards2 .card2, .skills-card {
+    width: 100%;
+  }
+
+  .devtools {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    gap: 5px;
+  }
+}
+
+/* ---------- INPUTS E FORM ---------- */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+
+  input, textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btn-send, .btn-primary, .btn-secondary, .deploy {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
 }
