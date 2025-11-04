@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, X, Menu } from 'lucide-react'; // ⬅️ Adicionado X e Menu
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
@@ -10,6 +10,8 @@ import novaopcao from '../../assets/images/novaopcao.png';
 
 function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 0);
@@ -60,7 +62,7 @@ function Home() {
 
   }
 
-      // Função para scroll suave
+  // Função para scroll suave
   const scrollPara = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -70,16 +72,27 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Navbar */}
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <ul className="nav">
-          <li className="left-item"><a href="#">&lt;Matheus/&gt;</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+        <div className="nav-left">
+          <a href="#" className="logo">&lt;Matheus/&gt;</a>
+        </div>
+
+
+
+        <button className="hamburguer" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X /> : <Menu />}
+        </button>
+
+        <div className={`menu-lateral ${menuOpen ? "ativo" : ""}`}>
+          <ul>
+            <li><a href="#sobre" onClick={() => setMenuOpen(false)}>Sobre</a></li>
+            <li><a href="#projetos" onClick={() => setMenuOpen(false)}>Projetos</a></li>
+            <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+            <li><a href="#contato" onClick={() => setMenuOpen(false)}>Contato</a></li>
+          </ul>
+        </div>
       </nav>
+
 
       {/* Corpo */}
       <div className="corpo">

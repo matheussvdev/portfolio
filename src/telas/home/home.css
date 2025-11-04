@@ -1,28 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 body {
-  background-color: rgb(0, 0, 0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-
-
-  justify-content: center;
-  /* centraliza horizontalmente */
-  align-items: center;
-  /* centraliza verticalmente */
+  background-color: rgb(0, 0, 0);
 
 
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-#sobre{
-   scroll-margin-top: 100px;
+#sobre {
+  scroll-margin-top: 100px;
 }
-#projetos{
-   scroll-margin-top: 100px;
+
+#projetos {
+  scroll-margin-top: 100px;
 }
 
 .home-container {
@@ -52,12 +52,15 @@ html{
 
   display: flex;
   align-items: center;
-   transition: border-bottom 0.3s ease; /* animação suave */
-  border-bottom: none; /* padrão sem borda */
+  transition: border-bottom 0.3s ease;
+  /* animação suave */
+  border-bottom: none;
+  /* padrão sem borda */
 }
 
 .navbar.scrolled {
-  border-bottom: 1px solid gray; /* cor da borda quando scroll */
+  border-bottom: 1px solid gray;
+  /* cor da borda quando scroll */
 }
 
 
@@ -91,7 +94,7 @@ html{
 }
 
 /* AQUI APLICAMOS O GRADIENT NO LINK (elemento que contém o texto) */
-.nav li.left-item a{
+.nav li.left-item a {
   display: inline-block;
   background: linear-gradient(to right, #4ade80, #60a5fa);
   -webkit-background-clip: text;
@@ -101,7 +104,7 @@ html{
   color: transparent;
   text-decoration: none;
 
-   font-family: "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
 }
 
 /* links normais da navbar */
@@ -126,9 +129,9 @@ html{
 
   margin-top: 9%;
   text-align: center;
-  margin-left: 15%;
+  align-items: center;
+  justify-content: center;
 
-  text-align: center;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(255, 255, 255);
   width: 100%;
@@ -140,24 +143,25 @@ html{
 
 }
 
-.h1-span{
+.h1-span {
   color: white;
   font-size: 3.75rem;
   margin-bottom: -2%;
   font-family: "Archivo Black", sans-serif;
   margin-left: 1%;
- 
+
   -webkit-background-clip: text;
- 
+
   background-clip: text;
   /* para navegadores que suportam */
- 
+
   text-decoration: none;
 
 }
-.h1-prin{
+
+.h1-prin {
   background: linear-gradient(to right, #4ade80, #60a5fa);
-   font-family: "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -327,7 +331,7 @@ html{
 .sobremim {
   width: 100%;
   /* largura total da tela */
-  background-color: rgba(17, 24, 39, 0.3);
+  background-color: rgba(20, 28, 46, 0.3);
   /* seu background */
   padding: 60px 0;
   /* padding vertical, sem horizontal */
@@ -335,58 +339,57 @@ html{
 }
 
 /* Conteúdo centralizado e responsivo */
-.sobremim-conteudo {
-  max-width: 1200px;
-  /* limita largura do conteúdo */
-  margin: 0 auto;
-  /* centraliza horizontalmente */
-  padding: 0 20px;
-  /* espaço lateral interno */
-}
 
-.p-sobre{
- display: inline-block; /* necessário para usar width */
- font-family: 'Fira Code', monospace;
+
+.p-sobre {
+  display: inline-block;
+  /* necessário para usar width */
+  font-family: 'Fira Code', monospace;
   text-align: center;
   width: 100%;
   color: white;
-  
+
   font-size: 40px;
   margin-bottom: 40px;
- 
+
 }
 
-.p-span{
-    background: #00ff80;
+.p-span {
+  background: #00ff80;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   background-clip: text;
   text-align: center;
-   font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
   font-size: bold;
 
 }
 
 .conteudo {
+
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: row;
+  /* padrão, mas bom deixar explícito */
+  justify-content: space-between;
+  align-items: flex-start;
+  /* ou center, dependendo da necessidade */
+  gap: 2rem;
+  /* espaçamento entre os elementos */
+  padding: 1rem 0;
 }
 
 .descricao {
-  flex: 1 1 400px;
+  flex: 1;
   min-width: 100px;
-  margin-left: 15%;
-  margin-right: 3%;
+  margin-left: 3%;
+  margin-right: 10%;
 
   margin-top: 5%;
 }
 
 .descricao p {
   color: #fff;
-  line-height: 1.6;
   padding: 0 10px;
 }
 
@@ -394,6 +397,8 @@ html{
 /*CARDS*/
 
 .habili {
+  flex: 1;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
@@ -402,7 +407,8 @@ html{
 }
 
 .card {
-  background-color: #1f2937; /* tom escuro para o card */
+  background-color: #1f2937;
+  /* tom escuro para o card */
   border-radius: 10px;
   padding: 20px;
   text-align: center;
@@ -410,17 +416,18 @@ html{
 
   height: 80%;
   width: 90%;
- 
+
 }
 
 .card:hover {
-  box-shadow: 0 5px 10px rgba(0,255,128,0.2);
+  box-shadow: 0 5px 10px rgba(0, 255, 128, 0.2);
 }
 
 .icon {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #00ff80; /* verde do seu site */
+  color: #00ff80;
+  /* verde do seu site */
 }
 
 .card h3 {
@@ -429,7 +436,8 @@ html{
 }
 
 .card p {
-  color: #cbd5e1; /* cinza claro */
+  color: #cbd5e1;
+  /* cinza claro */
   font-size: 0.9rem;
   font-family: "Playfair Display", serif;
 }
@@ -437,8 +445,9 @@ html{
 
 /*projetos*/
 
-.p-projetos{
- display: inline-block; /* necessário para usar width */
+.p-projetos {
+  display: inline-block;
+  /* necessário para usar width */
   text-align: center;
   width: 100%;
   color: white;
@@ -446,17 +455,17 @@ html{
   font-size: 2.5rem;
   margin-top: 2%;
   margin-bottom: 0%;
- 
+
 }
 
-.p-span-projetos{
-    background: #00ff80;
+.p-span-projetos {
+  background: #00ff80;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   background-clip: text;
   text-align: center;
-   font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
   font-size: bold;
 
 }
@@ -467,16 +476,18 @@ html{
 }
 
 .nome {
-  color: #3b82f6; /* azul claro */
+  color: #3b82f6;
+  /* azul claro */
 }
 
-.subtitulo{
+.subtitulo {
   color: #16a34a;
   text-align: center;
 
   margin-bottom: 2%;
 }
-.subtitulo  span{
+
+.subtitulo span {
   color: #94a3b8;
   font-family: 'Fira Code', monospace;
   margin-bottom: 50px;
@@ -509,7 +520,6 @@ html{
 
 .card2 img {
   width: 100%;
- 
   border-bottom: 2px solid #0f172a;
 }
 
@@ -601,7 +611,7 @@ html{
   width: 320px;
   padding: 20px;
   text-align: left;
-  box-shadow: 0 0 10px rgba(0,255,128,0.05);
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.05);
 }
 
 .skills-titulo {
@@ -618,12 +628,14 @@ html{
 .skill {
   margin-bottom: 12px;
 }
-.barra-container{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-     align-items: center;
+
+.barra-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
 }
+
 .barra {
   flex: 1;
   background-color: #1f1f1f;
@@ -632,7 +644,7 @@ html{
   height: 18px;
 }
 
-.barra > div {
+.barra>div {
   background: linear-gradient(90deg, #00ff80, #00cc66);
   height: 100%;
   border-radius: 10px;
@@ -699,27 +711,28 @@ html{
 
 /*CONTATO*/
 
-.p-contato{
- display: inline-block; /* necessário para usar width */
- font-family: 'Fira Code', monospace;
+.p-contato {
+  display: inline-block;
+  /* necessário para usar width */
+  font-family: 'Fira Code', monospace;
   text-align: center;
   width: 100%;
   color: rgb(255, 255, 0);
-  
+
   font-size: 40px;
   margin-top: 4%;
   margin-bottom: 4%;
- 
+
 }
 
-.p-span-contato{
-    background: #ffffff;
+.p-span-contato {
+  background: #ffffff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   background-clip: text;
   text-align: center;
-   font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
   font-size: bold;
 
 }
@@ -731,7 +744,8 @@ html{
 }
 
 .p-subtitle {
-  color: #6b7280; /* cinza claro */
+  color: #6b7280;
+  /* cinza claro */
   margin-bottom: 3%;
   text-align: center;
 }
@@ -744,29 +758,31 @@ html{
 }
 
 
-.send-message{
+.send-message {
   transition: 1s;
 }
 
-.send-message form{
+.send-message form {
   padding: 2%;
   margin-right: 5%;
 }
 
-.send-message:hover{
-   box-shadow: 0 2px 16px rgba(157, 168, 5, 0.581);
-   transition: 1s;
+.send-message:hover {
+  box-shadow: 0 2px 16px rgba(157, 168, 5, 0.581);
+  transition: 1s;
 
 }
 
-.send-message, .contact-info {
+.send-message,
+.contact-info {
   background-color: #111827;
   border-radius: 10px;
   padding: 20px;
   width: 30%;
 }
 
-.send-message h3, .contact-info h3 {
+.send-message h3,
+.contact-info h3 {
   margin-bottom: 15px;
   color: yellow;
 }
@@ -775,22 +791,26 @@ html{
   color: #10b981;
 }
 
-.contact-info{
+.contact-info {
   background-color: transparent;
   display: block;
 }
 
 .input-row {
-   display: flex;          /* deixa os inputs lado a lado */
-  gap: 7%;              /* espaçamento entre os inputs */
+  display: flex;
+  /* deixa os inputs lado a lado */
+  gap: 7%;
+  /* espaçamento entre os inputs */
   margin-bottom: 15px;
 
 }
 
 .input-group {
   display: flex;
-  flex-direction: column; /* coloca o label acima do input */
-  flex: 1;                /* para cada input ocupar espaço proporcional */
+  flex-direction: column;
+  /* coloca o label acima do input */
+  flex: 1;
+  /* para cada input ocupar espaço proporcional */
 }
 
 .input-group input {
@@ -799,7 +819,8 @@ html{
   border: 1px solid #333;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   background-color: #1f2937;
   border: none;
@@ -824,16 +845,20 @@ textarea {
   cursor: pointer;
   border-radius: 5px;
 }
-.informacoes{
- background-color: #111827;
- padding: 3%; /* todos os elementos diretos da div */
+
+.informacoes {
+  background-color: #111827;
+  padding: 3%;
+  /* todos os elementos diretos da div */
   box-sizing: border-box;
   border-radius: 2%;
 }
 
 .informacoes {
-  color: #fff; /* cor do texto */
-  font-family: monospace; /* estilo codificado */
+  color: #fff;
+  /* cor do texto */
+  font-family: monospace;
+  /* estilo codificado */
 }
 
 .informacoes h3 {
@@ -842,27 +867,34 @@ textarea {
 }
 
 .informacoes .green {
-  color: #00ff7f; /* verde destacado */
+  color: #00ff7f;
+  /* verde destacado */
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 10px; /* espaço entre ícone e texto */
+  gap: 10px;
+  /* espaço entre ícone e texto */
   margin-bottom: 15px;
   font-size: 16px;
-  color: #fff; /* cor do texto */
+  color: #fff;
+  /* cor do texto */
 }
 
 .icon-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1f2937; /* fundo escuro como na imagem */
-  border-radius: 8px;        /* borda arredondada */
-  width: 35px;               /* tamanho quadrado do ícone */
+  background-color: #1f2937;
+  /* fundo escuro como na imagem */
+  border-radius: 8px;
+  /* borda arredondada */
+  width: 35px;
+  /* tamanho quadrado do ícone */
   height: 35px;
-  color: #10b981;            /* cor do ícone (verde) */
+  color: #10b981;
+  /* cor do ícone (verde) */
   flex-shrink: 0;
 }
 
@@ -875,7 +907,8 @@ textarea {
 */
 
 .info-item .icon {
-  background-color: #111827; /* fundo do ícone */
+  background-color: #111827;
+  /* fundo do ícone */
   padding: 10px;
   border-radius: 8px;
   display: flex;
@@ -886,10 +919,11 @@ textarea {
 
 
 
-.status{
+.status {
   margin-top: 13%;
- background-color: #111827;
- padding: 3%; /* todos os elementos diretos da div */
+  background-color: #111827;
+  padding: 3%;
+  /* todos os elementos diretos da div */
   box-sizing: border-box;
   border-radius: 2%;
 }
@@ -900,8 +934,10 @@ textarea {
 
 /* Footer geral */
 .footer {
-  background-color: #0f172a; /* fundo escuro */
-  color: #cbd5e1; /* cor do texto */
+  background-color: #0f172a;
+  /* fundo escuro */
+  color: #cbd5e1;
+  /* cor do texto */
   padding: 40px 20px;
   font-family: 'Fira Code', monospace;
   display: flex;
@@ -925,24 +961,28 @@ textarea {
 }
 
 .footer-code .dev {
-  color: #14b8a6; /* verde */
+  color: #14b8a6;
+  /* verde */
   font-weight: bold;
   font-size: 18px;
 }
 
 .footer-code .subtitle {
-  color: #94a3b8; /* cinza claro */
+  color: #94a3b8;
+  /* cinza claro */
   margin: 5px 0;
   font-size: 14px;
 }
 
 .footer-code .passion {
-  color: #60a5fa; /* azul para "const" */
+  color: #60a5fa;
+  /* azul para "const" */
   font-size: 14px;
 }
 
 .footer-code .passion .highlight {
-  color: #facc15; /* amarelo para valor */
+  color: #facc15;
+  /* amarelo para valor */
 }
 
 /* Navegação */
@@ -965,7 +1005,8 @@ textarea {
 }
 
 .footer-nav li:hover {
-  color: #60a5fa; /* azul no hover */
+  color: #60a5fa;
+  /* azul no hover */
 }
 
 /* Redes sociais */
@@ -978,7 +1019,6 @@ textarea {
   margin: 5px 0;
   font-size: 14px;
   color: #94a3b8;
-  
 }
 
 .footer-social .icons {
@@ -1003,13 +1043,14 @@ textarea {
   transform: scale(1.1);
 }
 
-.footer-social .icons a:nth-child(2):hover{
+.footer-social .icons a:nth-child(2):hover {
   color: #6484dc;
 }
 
-.footer-social .icons a:nth-child(3):hover{
+.footer-social .icons a:nth-child(3):hover {
   color: #8b5ede;
 }
+
 /* Rodapé inferior */
 .footer-bottom {
   border-top: 1px solid #1e293b;
@@ -1024,11 +1065,13 @@ textarea {
 }
 
 .footer-bottom .heart {
-  color: #f87171; /* vermelho */
+  color: #f87171;
+  /* vermelho */
 }
 
 .footer-bottom .console-log .highlight {
-  color: #facc15; /* amarelo */
+  color: #facc15;
+  /* amarelo */
 }
 
 /* ============================= */
@@ -1039,7 +1082,8 @@ textarea {
     padding: 60px 15px;
   }
 
-  .h1-span, .h1-prin {
+  .h1-span,
+  .h1-prin {
     font-size: 2rem;
   }
 
@@ -1053,17 +1097,22 @@ textarea {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-  .card, .cards2 .card2, .skills-card {
+  .card,
+  .cards2 .card2,
+  .skills-card {
     width: 90%;
     padding: 12px;
   }
 
-  .send-message, .contact-info {
+  .send-message,
+  .contact-info {
     width: 90%;
     margin: 0 auto;
   }
 
-  .p-sobre, .p-projetos, .p-contato {
+  .p-sobre,
+  .p-projetos,
+  .p-contato {
     font-size: 28px;
   }
 
@@ -1091,7 +1140,8 @@ textarea {
     padding: 40px 10px;
   }
 
-  .h1-span, .h1-prin {
+  .h1-span,
+  .h1-prin {
     font-size: 1.8rem;
   }
 
@@ -1107,7 +1157,8 @@ textarea {
     gap: 15px;
   }
 
-  .cards2 .card2, .skills-card {
+  .cards2 .card2,
+  .skills-card {
     width: 90%;
   }
 
@@ -1116,7 +1167,9 @@ textarea {
     padding: 15px;
   }
 
-  .p-sobre, .p-projetos, .p-contato {
+  .p-sobre,
+  .p-projetos,
+  .p-contato {
     font-size: 24px;
   }
 
@@ -1124,7 +1177,8 @@ textarea {
     font-size: 14px;
   }
 
-  .send-message, .contact-info {
+  .send-message,
+  .contact-info {
     width: 90%;
     margin: 0 auto;
   }
@@ -1135,56 +1189,343 @@ textarea {
   }
 }
 
-/* ---------- CELULARES PEQUENOS (480px) ---------- */
-@media (max-width: 480px) {
-  .h1-span, .h1-prin {
-    font-size: 1.5rem;
+/* ==== BOTÃO HAMBURGUER ==== */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 50%;
+  z-index: 3000;
+
+  margin-top: -10%;
+}
+
+.hamburguer span {
+  height: 3px;
+  width: 120%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animação quando abre */
+.hamburguer.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburguer.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* MENU LATERAL - escondido por padrão */
+.menu-lateral {
+  position: fixed;
+  /* fora do fluxo do layout */
+  top: 0;
+  right: 0;
+  width: 0;
+  /* largura inicial = 0 → não ocupa espaço */
+  height: 100vh;
+  overflow: hidden;
+  /* esconde conteúdo quando fechado */
+  background-color: #111827;
+  color: white;
+  transition: width 0.3s ease-in-out;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 0 0 0;
+}
+
+/* Quando o menu está ativo */
+.menu-lateral.ativo {
+  width: 70%;
+  /* aparece gradualmente */
+  max-width: 300px;
+}
+
+/* Lista e links */
+.menu-lateral ul {
+  display: block;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-lateral li {
+  margin: 20px 0;
+}
+
+.menu-lateral a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.menu-lateral a:hover {
+  color: #6ae9ad;
+}
+
+/* Botão hamburguer */
+.hamburguer {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 10000;
+}
+
+@media (max-width: 768px) {
+  .hamburguer {
+    display: block;
   }
 
-  .p-sobre, .p-projetos, .p-contato {
-    font-size: 20px;
+  .corpo {
+    margin-top: 32%;
   }
 
   .corpo p {
-    font-size: 13px;
+    font-size: 1rem !important;
   }
 
-  .button-container {
-    gap: 5px;
+  .button-container button {
+    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .home-container {
+    min-height: 90vh;
+    width: 100%;
+    background: radial-gradient(ellipse 100% 10% at 50% 5%,
+        /* centro mais para baixo */
+        rgba(0, 255, 128, 0.05) 0%,
+        rgba(0, 0, 0, 0.95) 70%);
+    overflow-x: hidden;
+
+  }
+
+  .mouse {
+    margin-left: 46%;
+  }
+
+  .descricao {
+    margin-left: 13%;
+    margin-right: 13%;
+    text-align: justify;
+
+    margin-top: 5%;
+
+    min-width: 80px;
+
+  }
+
+  .descricao p {
+    font-size: 0.5rem;
+    padding: 0;
+
+    text-align: justify;
+
+  }
+
+  .conteudo {
+
+    display: block;
+    flex-direction: row;
+    /* padrão, mas bom deixar explícito */
+    justify-content: space-between;
+    align-items: flex-start;
+    /* ou center, dependendo da necessidade */
+    gap: 2rem;
+    /* espaçamento entre os elementos */
+    padding: 1rem 0;
   }
 
   .habili {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, 0.5fr);
+    gap: 2px;
+    margin-left: 9%;
   }
 
-  .cards2 .card2, .skills-card {
-    width: 100%;
+  .card {
+    max-width: 130px;
+    padding: 10px;
+  }
+
+  .card h3 {
+    font-size: 13px;
+  }
+
+  .card p {
+    font-size: 11px;
+  }
+
+  section {
+    margin: 0;
+    padding: 0;
+  }
+
+  .cards2 {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .card2 {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  .card2 img {
+    height: 240px;
+  }
+
+  .card2 h3 {
+    font-size: 1rem;
+  }
+
+  .card2 p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .tags span {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .deploy {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  #projetos {
+    margin-top: 4%;
+  }
+
+  .skills {
+    padding: 40px 10px;
+  }
+
+  .skills .titulo {
+    font-size: 1.4rem;
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .skills-grupos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skills-card {
+    width: 90%;
+    max-width: 320px;
+    padding: 15px;
+  }
+
+  .skills-titulo {
+    font-size: 1rem;
   }
 
   .devtools {
+    margin-top: 25px;
+  }
+
+  .devtools-titulo {
+    font-size: 1rem;
+  }
+
+  .devtools-grid {
+    gap: 8px;
+  }
+
+  .devtools-grid span {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+
+  .contato {
+    padding: 40px 10px;
+  }
+
+  .p-contato {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .send-message {
+
+    width: 85%;
+    max-width: 320px;
+    padding: 12px;
+
+  }
+
+  .contact-info {
+    width: 90%;
+    max-width: 380px;
+    padding: 15px;
+  }
+
+  .send-message h3,
+  .contact-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input,
+  textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .btn-send {
     width: 100%;
     padding: 10px;
   }
 
-  .navbar ul {
-    gap: 5px;
-  }
-}
-
-/* ---------- INPUTS E FORM ---------- */
-@media (max-width: 600px) {
-  .input-row {
-    flex-direction: column;
+  .status p {
+    font-size: 0.8rem;
   }
 
-  input, textarea {
-    font-size: 13px;
-    padding: 8px;
+  .status ul li {
+    font-size: 0.8rem;
   }
 
-  .btn-send, .btn-primary, .btn-secondary, .deploy {
-    font-size: 13px;
-    padding: 8px 10px;
+  /*Footer*/
+
+ .footer-top,
+ .footer-bottom {
+      margin-left: 1%;
   }
 }
