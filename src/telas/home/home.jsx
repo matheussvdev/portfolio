@@ -6,11 +6,51 @@ import { BsTelephone } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import emailjs from 'emailjs-com';
 import novaopcao from '../../assets/images/novaopcao.png';
+import home from '../../assets/images/home.png';
+import vendas from '../../assets/images/vendas.png';
+import relatorios from '../../assets/images/relatorios.png';
+import carrinho from '../../assets/images/carrinho.png';
+import estoque from '../../assets/images/estoque.png';
+
 
 
 function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalAberto, setModalAberto] = useState(false);
+  const [imagemAtual, setImagemAtual] = useState(0);
+  const projetosInfo = [
+    {
+      imagem: home,
+      titulo: "Home",
+      descricao: "Apresenta o painel principal do sistema.",
+      
+    },
+    {
+      imagem: estoque,
+      titulo: "Estoque",
+      descricao: "permite gerenciar todos os produtos cadastrados, incluindo inserção, edição, exclusão e controle de quantidades, garantindo organização e atualização dos itens disponíveis.",
+     
+    },
+    {
+      imagem: vendas,
+      titulo: "Vendas",
+      descricao: "centraliza o registro e acompanhamento das transações realizadas, exibindo histórico, valores e desempenho comercial de forma prática e visual.",
+     
+    },
+     {
+      imagem: relatorios,
+      titulo: "Relatórios",
+      descricao: "fornece uma visão analítica do sistema, apresentando dados consolidados em tabelas e gráficos que auxiliam na tomada de decisões estratégicas.",
+      
+    },
+     {
+      imagem: carrinho,
+      titulo: "Carrinho",
+      descricao: "reúne os produtos selecionados para compra, permitindo revisar os itens, ajustar quantidades e confirmar a operação antes da finalização da venda.",
+      
+    },
+  ];
 
 
   useEffect(() => {
@@ -77,9 +117,15 @@ function Home() {
           <a href="#" className="logo">&lt;Matheus/&gt;</a>
         </div>
 
+        {/* Links visíveis no desktop */}
+        <ul className="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
 
-
-        <button className="hamburguer" onClick={() => setMenuOpen(!menuOpen)}>
+       <button className="hamburguer" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X /> : <Menu />}
         </button>
 
@@ -96,7 +142,7 @@ function Home() {
 
       {/* Corpo */}
       <div className="corpo">
-        <img src="" alt="" />
+        
         <span className='h1-span'>&lt;<span className='h1-prin'>Matheus Santos/</span>&gt;</span>
         <p>
           <span style={{ color: "#569CD6" }}>const </span>
@@ -165,10 +211,50 @@ function Home() {
             <h3>Nova opção</h3>
             <p>Aplicativo desenvolvido para uso interno no comércio do meu pai. Permite registrar vendas, controlar o estoque, gerar relatórios e acompanhar devedores de forma prática e organizada.</p>
             <div className="tags"><span>React Native</span><span>TypeScript</span><span>Firebase</span></div>
-            <button className="deploy">acessar()</button>
+            <button className="deploy" onClick={() => setModalAberto(true)}>acessar()</button>
           </div>
         </div>
       </div>
+
+      {modalAberto && (
+        <div className={`modal-overlay ${modalAberto ? "ativo" : ""}`} onClick={() => setModalAberto(false)}>
+          <div className="modal-conteudo" onClick={(e) => e.stopPropagation()}>
+            <button className="fechar-modal" onClick={() => setModalAberto(false)}>
+              <X size={24} />
+            </button>
+
+            <div className="carrossel">
+              <button
+                className="seta"
+                onClick={() =>
+                  setImagemAtual((imagemAtual - 1 + projetosInfo.length) % projetosInfo.length)
+                }
+              >
+                ‹
+              </button>
+
+              <img
+                src={projetosInfo[imagemAtual].imagem}
+                alt={projetosInfo[imagemAtual].titulo}
+                className="carrossel-imagem"
+              />
+
+              <button
+                className="seta"
+                onClick={() => setImagemAtual((imagemAtual + 1) % projetosInfo.length)}
+              >
+                ›
+              </button>
+            </div>
+
+            <div className="modal-info">
+              <h3>{projetosInfo[imagemAtual].titulo}</h3>
+              <p>{projetosInfo[imagemAtual].descricao}</p>
+             
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Skills */}
       <div className="skills" id='skills'>

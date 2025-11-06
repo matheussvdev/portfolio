@@ -13,6 +13,18 @@ body {
 
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+button,
+button:focus,
+button:active {
+  outline: none;
+ 
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -63,6 +75,107 @@ html {
   /* cor da borda quando scroll */
 }
 
+/*Modal*/
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  outline: none;
+  position: fixed;
+  top: 7%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+
+   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-conteudo {
+  background: #0a0f1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  
+    transform: translateY(-30px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.modal-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+  transition: transform 1s ease, opacity 0.3s ease;
+}
+
+
+.modal-overlay.ativo .modal-conteudo {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 1s ease, opacity 0.3s ease;
+}
+
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.carrossel-imagem {
+  width: 80%;
+  max-height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.modal-overlay button:focus{
+  outline: none;
+}
+
+.seta {
+  outline: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-info {
+  text-align: left;
+}
+
+.modal-info h3 {
+  color: #00ff7f;
+  margin-bottom: 10px;
+}
+
+.modal-info p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
 
 
 /* UL ocupa toda a largura e organiza os LI */
@@ -120,6 +233,10 @@ html {
 .navbar a:hover {
   color: #409c5d;
   transition: 0.25s;
+}
+
+.nav-links{
+  display: flex;
 }
 
 /*CORPO COM IMAGEM E DEGRADÊ*/
@@ -658,6 +775,7 @@ html {
   min-width: 30px;
   text-align: right;
 }
+
 .skill span {
   display: flex;
   justify-content: space-between;
@@ -1121,8 +1239,12 @@ textarea {
   }
 }
 
+
+
 /* ---------- CELULARES (768px) ---------- */
 @media (max-width: 768px) {
+
+  
   .navbar ul {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1226,6 +1348,7 @@ textarea {
 
 /* MENU LATERAL - escondido por padrão */
 .menu-lateral {
+  outline: none;
   position: fixed;
   /* fora do fluxo do layout */
   top: 0;
@@ -1269,7 +1392,7 @@ textarea {
 .menu-lateral a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: block;
   width: 100%;
   transition: 0.3s;
@@ -1293,7 +1416,13 @@ textarea {
 @media (max-width: 768px) {
   .hamburguer {
     display: block;
+
   }
+
+  .nav-links{
+    display: none  !important;
+  }
+
 
   .corpo {
     margin-top: 32%;
@@ -1341,6 +1470,24 @@ textarea {
     text-align: justify;
 
   }
+
+  /*Modal*/
+
+  .modal-conteudo {
+  background: #0a0f1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  
+    transform: translateY(-30px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
   .conteudo {
 
@@ -1507,6 +1654,7 @@ textarea {
   textarea {
     font-size: 0.85rem;
     padding: 8px;
+    outline: none;
   }
 
   .btn-send {
@@ -1524,8 +1672,46 @@ textarea {
 
   /*Footer*/
 
- .footer-top,
- .footer-bottom {
-      margin-left: 1%;
+  .footer-top,
+  .footer-bottom {
+    margin-left: 1%;
   }
+
+  /* Remove qualquer contorno ao clicar ou focar */
+  button:focus,
+  button:focus-visible,
+  a:focus,
+  a:focus-visible,
+  svg:focus,
+  svg:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ---------- CELULARES (400px) ---------- */
+@media (max-width: 400px) {   
+  
+
+ .h1-span,
+  .h1-prin {
+    font-size: 1.3rem !important;
+  }
+
+   .corpo {
+    margin-left: 0;
+    padding: 40px 10px;
+    margin-right: 20%;
+  }
+
+  .corpo span {
+    font-size: 12px;
+  }
+
+  .habili{
+    gap: 1px;
+  } 
+
+  /*sobre mim*/
+  
 }
