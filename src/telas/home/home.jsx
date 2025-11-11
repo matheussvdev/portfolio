@@ -19,36 +19,37 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalAberto, setModalAberto] = useState(false);
   const [imagemAtual, setImagemAtual] = useState(0);
+  const [imagemAmpliada, setImagemAmpliada] = useState(false);
   const projetosInfo = [
     {
       imagem: home,
       titulo: "Home",
-      descricao: "Apresenta o painel principal do sistema.",
-      
+      descricao: "Esse é o painel principal do sistema.",
+
     },
     {
       imagem: estoque,
       titulo: "Estoque",
-      descricao: "permite gerenciar todos os produtos cadastrados, incluindo inserção, edição, exclusão e controle de quantidades, garantindo organização e atualização dos itens disponíveis.",
-     
+      descricao: "O  Estoque permite gerenciar todos os produtos cadastrados, incluindo inserção, edição, exclusão e controle de quantidades, garantindo organização e atualização dos itens disponíveis.",
+
     },
     {
       imagem: vendas,
       titulo: "Vendas",
-      descricao: "centraliza o registro e acompanhamento das transações realizadas, exibindo histórico, valores e desempenho comercial de forma prática e visual.",
-     
+      descricao: "A central de Vendas centraliza o registro e acompanhamento das transações realizadas, exibindo histórico, valores e desempenho comercial de forma prática e visual.",
+
     },
-     {
+    {
       imagem: relatorios,
       titulo: "Relatórios",
-      descricao: "fornece uma visão analítica do sistema, apresentando dados consolidados em tabelas e gráficos que auxiliam na tomada de decisões estratégicas.",
-      
+      descricao: "A página de Relatórios fornece uma visão analítica do sistema, apresentando dados consolidados em tabelas e gráficos que auxiliam na tomada de decisões estratégicas.",
+
     },
-     {
+    {
       imagem: carrinho,
       titulo: "Carrinho",
-      descricao: "reúne os produtos selecionados para compra, permitindo revisar os itens, ajustar quantidades e confirmar a operação antes da finalização da venda.",
-      
+      descricao: "O carrinho reúne os produtos selecionados para compra, permitindo revisar os itens, ajustar quantidades e confirmar a operação antes da finalização da venda.",
+
     },
   ];
 
@@ -125,7 +126,7 @@ function Home() {
           <li><a href="#contato">Contato</a></li>
         </ul>
 
-       <button className="hamburguer" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="hamburguer" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X /> : <Menu />}
         </button>
 
@@ -142,7 +143,7 @@ function Home() {
 
       {/* Corpo */}
       <div className="corpo">
-        
+
         <span className='h1-span'>&lt;<span className='h1-prin'>Matheus Santos/</span>&gt;</span>
         <p>
           <span style={{ color: "#569CD6" }}>const </span>
@@ -225,7 +226,7 @@ function Home() {
 
             <div className="carrossel">
               <button
-                className="seta"
+                className="seta" id="setaesquerda"
                 onClick={() =>
                   setImagemAtual((imagemAtual - 1 + projetosInfo.length) % projetosInfo.length)
                 }
@@ -237,20 +238,33 @@ function Home() {
                 src={projetosInfo[imagemAtual].imagem}
                 alt={projetosInfo[imagemAtual].titulo}
                 className="carrossel-imagem"
+                onClick={() => setImagemAmpliada(true)}
               />
 
               <button
                 className="seta"
+                id="setadireita"
                 onClick={() => setImagemAtual((imagemAtual + 1) % projetosInfo.length)}
               >
                 ›
               </button>
+
+              {/* Modal de zoom */}
+              {imagemAmpliada && (
+                <div className="zoom-modal" onClick={() => setImagemAmpliada(false)}>
+                  <img
+                    src={projetosInfo[imagemAtual].imagem}
+                    alt={projetosInfo[imagemAtual].titulo}
+                    className="zoom-imagem"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="modal-info">
               <h3>{projetosInfo[imagemAtual].titulo}</h3>
               <p>{projetosInfo[imagemAtual].descricao}</p>
-             
+
             </div>
           </div>
         </div>
@@ -266,7 +280,7 @@ function Home() {
             <h3 className="skills-titulo">frontend<span className="dot">.skills</span></h3>
             <Skill nome="React.js" nivel={80} />
             <Skill nome="TypeScript" nivel={80} />
-            <Skill nome="Next.js" nivel={70} />
+            <Skill nome="Next.js" nivel={30} />
             <Skill nome="CSS" nivel={90} />
             <Skill nome="Bootstrap" nivel={70} />
             <Skill nome="JavaScript" nivel={80} />
@@ -275,30 +289,20 @@ function Home() {
           <div className="skills-card">
             <h3 className="skills-titulo">backend<span className="dot">.skills</span></h3>
             <Skill nome="Node.js" nivel={70} />
-            <Skill nome="Python" nivel={50} />
+            <Skill nome="Python" nivel={20} />
             <Skill nome="MySQL" nivel={70} />
             <Skill nome="Java" nivel={40} />
-            <Skill nome="C++" nivel={40} />
+            <Skill nome="C++" nivel={30} />
             <Skill nome="PHP" nivel={20} />
           </div>
 
           <div className="skills-card">
             <h3 className="skills-titulo">outras<span className="dot">.skills</span></h3>
             <Skill nome="Git & Github" nivel={85} />
-            <Skill nome="Hardware" nivel={90} />
-            <Skill nome="Windows" nivel={90} />
-            <Skill nome="Linux" nivel={90} />
-            <Skill nome="Firebase" nivel={75} />
-          </div>
-        </div>
-
-        <div className="devtools">
-          <h3 className="devtools-titulo">dev<span className="dot">.tools</span>[]</h3>
-          <div className="devtools-grid">
-            <span>VS Code</span>
-            <span>Git</span>
-            <span>Figma</span>
-            <span>Firebase</span>
+            <Skill nome="Hardware" nivel={95} />
+            <Skill nome="Windows" nivel={99} />
+            <Skill nome="Linux" nivel={95} />
+            <Skill nome="Firebase" nivel={80} />
           </div>
         </div>
       </div>
