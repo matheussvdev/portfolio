@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
-import { Github, Linkedin, Mail, X, Menu } from 'lucide-react'; // ⬅️ Adicionado X e Menu
+import { Github, Linkedin, Mail, X, Menu, MessageCircle  } from 'lucide-react'; // ⬅️ Adicionado X e Menu
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import emailjs from 'emailjs-com';
+import ChatBot from "../../telas/chatbot/chatbot";
 import novaopcao from '../../assets/images/novaopcao.png';
 import home from '../../assets/images/home.png';
 import vendas from '../../assets/images/vendas.png';
@@ -86,6 +87,8 @@ function Home() {
         alert("Ops! Ocorreu um erro ao enviar a mensagem.");
       });
   };
+
+  
 
   // Componente Skill
   function Skill({ nome, nivel }) {
@@ -364,7 +367,7 @@ function Home() {
           </div>
         </div>
       </div>
-
+<ChatBot />
 
       {/* Footer */}
       <footer className="footer">
@@ -404,6 +407,9 @@ function Home() {
       </footer>
 
     </div>
+
+    
+
   );
 }
 
